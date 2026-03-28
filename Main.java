@@ -2,8 +2,6 @@ import Clases.*;
 import javax.swing.JOptionPane;
 import java.util.List;
 import java.time.LocalDate;
-import java.time.localDate;
-
 /**
  * Clase principal del sistema de agendamiento de la Barbería.
  *
