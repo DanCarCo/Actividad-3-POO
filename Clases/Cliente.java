@@ -6,10 +6,6 @@ import java.util.List;
 /*
  * PUNTO 1 - SUBCLASE: CLIENTE
  * Cliente hereda de Usuario usando la palabra clave "extends".
- * Esto significa que Cliente ya tiene nombre, email y teléfono sin necesidad
- * de redeclararlos. Solo agrega lo que es específico de un cliente:
- * su historial de citas.
- *
  * PUNTO 1 - RELACIÓN DE AGREGACIÓN
  * Un Cliente puede tener múltiples citas a lo largo del tiempo.
  * La lista "citas" representa esa relación: el cliente agrupa citas,
