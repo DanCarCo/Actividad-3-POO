@@ -22,15 +22,19 @@ public class Barberia {
     }
 
     public void agregarProfesional(Profesional p) {
-        profesionales.add(p);
+        if (p != null) {
+            profesionales.add(p);
+        }
     }
 
     public List<Profesional> getProfesionales() {
-        return profesionales;
+        return new ArrayList<>(profesionales);
     }
 
     public void agendarCita(Cita cita) {
-        citas.add(cita);
+        if (cita != null) {
+            citas.add(cita);
+        }
     }
 
     public void mostrarCitas() {

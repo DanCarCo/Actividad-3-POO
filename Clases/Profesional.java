@@ -1,21 +1,39 @@
 package Clases;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Profesional {
-    private String nombre;
-    private List<String> horariosDisponibles;
+public class Profesional extends Usuario {
 
-    public Profesional(String nombre, List<String> horarios) {
-        this.nombre = nombre;
-        this.horariosDisponibles = horarios;
+    private String especialidad;
+    private List<Cita> citas;
+
+    public Profesional(String nombre, String email, String telefono, String especialidad) {
+        super(nombre, email, telefono);
+        this.especialidad = especialidad;
+        this.citas = new ArrayList<>();
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public List<String> getHorariosDisponibles() {
-        return horariosDisponibles;
+    public void agendarCita(Cita cita) {
+        if (cita != null) {
+            citas.add(cita);
+        }
+    }
+
+    public List<Cita> getCitas() {
+        return new ArrayList<>(citas);
+    }
+
+    public void mostrarCitas() {
+        citas.forEach(System.out::println);
+    }
+
+    @Override
+    public String toString() {
+        return "Profesional: " + getNombre() + " | Especialidad: " + especialidad;
     }
 }

@@ -11,5 +11,22 @@ public class Usuario {
         this.telefono = telefono;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + 
+               " | Email: " + email + 
+               " | Teléfono: " + telefono;
+    }
 }
