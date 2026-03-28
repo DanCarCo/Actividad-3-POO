@@ -13,6 +13,15 @@ import java.util.List;
  * CRITERIO 1 - Composición:
  *   Un Cliente está compuesto por una lista de Citas. Esto es composición porque
  *   las citas pertenecen al cliente y se gestionan dentro de su ciclo de vida.
+
+/*
+ * PUNTO 1 - SUBCLASE: CLIENTE
+ * Cliente hereda de Usuario usando la palabra clave "extends".
+ * PUNTO 1 - RELACIÓN DE AGREGACIÓN
+ * Un Cliente puede tener múltiples citas a lo largo del tiempo.
+ * La lista "citas" representa esa relación: el cliente agrupa citas,
+ * pero las citas también existen de forma independiente (están registradas
+ * en la Barbería y en el Profesional).
  */
 public class Cliente extends Usuario {
 
