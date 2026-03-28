@@ -1,12 +1,12 @@
 package Clases;
 
 public class Cita extends Servicio {
-    String fecha;
-    String hora;
-    String estado;
-    String comentario;
-    Cliente cliente;
-    Profesional profesional;
+    public String fecha;
+    public String hora;
+    public String estado;
+    public String comentario;
+    public Cliente cliente;
+    public Profesional profesional;
 
     public Cita(double precio, String descripcion, int duracion, String fecha, String hora, String estado, String comentario, Cliente cliente) {
         super(precio, descripcion, duracion);

@@ -1,9 +1,9 @@
 package Clases;
 
 public class Usuario {
-    String nombre;
-    String email;    
-    String telefono;
+    private String nombre;
+    private String email;
+    private String telefono;
 
     public Usuario(String nombre, String email, String telefono) {
         this.nombre = nombre;
@@ -11,5 +11,5 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    
+
 }
