@@ -1,6 +1,8 @@
 import Clases.*;
 import javax.swing.JOptionPane;
 import java.util.List;
+import java.time.LocalDate;
+import java.time.localDate;
 
 public class Main {
 
@@ -31,10 +33,12 @@ public class Main {
             Servicio servicio = Servicio.crearServicio(tipoServicio);
 
             // 🔹 DATOS DE LA CITA
+           
             String fecha = pedirFecha("Ingrese la fecha (YYYY-MM-DD):");
             String hora = pedirHora("Ingrese la hora (HH:MM):");
             String comentario = pedirTexto("Ingrese un comentario:");
 
+            
             Cita cita = new Cita(fecha, hora, "Pendiente", comentario, cliente, profesional, servicio);
 
             // 🔹 AGENDAR
@@ -135,16 +139,21 @@ public class Main {
 
     public static String pedirFecha(String mensaje) {
         String fecha;
+        LocalDate hoy = LocalDate.now();
+
         do {
             fecha = JOptionPane.showInputDialog(null, mensaje);
-
             if (fecha == null) throw new RuntimeException("Operación cancelada");
 
-            if (!fecha.matches("\\d{4}-\\d{2}-\\d{2}")) {
-                JOptionPane.showMessageDialog(null, "❌ Formato correcto: YYYY-MM-DD");
+            try {
+                LocalDate fechaIngresada = LocalDate.parse(fecha);
+                if (!fechaIngresada.isBefore(hoy)) break; // ✅ Fecha válida y no pasada
+                JOptionPane.showMessageDialog(null, "❌ La fecha no puede ser anterior a hoy (" + hoy + ")");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "❌ Formato incorrecto. Usa: YYYY-MM-DD");
             }
 
-        } while (!fecha.matches("\\d{4}-\\d{2}-\\d{2}"));
+        } while (true);
 
         return fecha;
     }
